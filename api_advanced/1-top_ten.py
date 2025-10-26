@@ -6,16 +6,15 @@ import requests
 
 def top_ten(subreddit):
     """Print the titles of the first 10 hot posts of a subreddit."""
-    headers = {'User-Agent': 'MyAPI/0.0.1'}
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    headers = {'User-Agent': 'alu-scripting/1.0'}
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
 
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
         if response.status_code != 200:
-            return  # do not print anything for invalid subreddit
+            return  # silently return for invalid subreddit
 
-        json_data = response.json()
-        children = json_data.get('data', {}).get('children', [])
+        children = response.json().get('data', {}).get('children', [])
 
         for post in children:
             title = post.get('data', {}).get('title')
@@ -23,4 +22,4 @@ def top_ten(subreddit):
                 print(title)
 
     except Exception:
-        return  # silently fail for invalid subreddit
+        return  # silently fail
