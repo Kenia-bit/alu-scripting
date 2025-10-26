@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module 2-recurse: Recursively queries the Reddit API and returns a list of all hot article titles for a subreddit."""
+"""
+Module 2-recurse
+Recursively queries the Reddit API and returns a list of all hot article titles for a subreddit.
+"""
 
 import requests
 
@@ -14,7 +17,7 @@ def recurse(subreddit, hot_list=None, after=None):
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "MyRedditApp/1.0"}
-    params = {"after": after, "limit": 100}  # 100 is max Reddit allows per page
+    params = {"after": after, "limit": 100}
 
     try:
         response = requests.get(url, headers=headers, params=params, allow_redirects=False)
