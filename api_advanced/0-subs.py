@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-This module queries the Reddit API and returns
-the number of subscribers for a given subreddit.
+Module 0-subs
+Queries the Reddit API and returns the number of subscribers
+for a given subreddit.
 """
 
 import requests
