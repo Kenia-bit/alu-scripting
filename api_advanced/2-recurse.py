@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-Module 2-recurse
-Recursively queries the Reddit API and returns a list of all hot article titles for a subreddit.
-"""
+"""Module 2-recurse
+Recursively queries the Reddit API and returns a list of all hot article titles."""
 
 import requests
 
