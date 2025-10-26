@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module 2-recurse
 Recursively queries the Reddit API and returns a list of all hot article titles."""
-
 import requests
 
 
@@ -36,3 +35,4 @@ def recurse(subreddit, hot_list=None, after=None):
 
     except Exception:
         return None
+
