@@ -1,2 +1,0 @@
-# alu-scripting
-API advanced
